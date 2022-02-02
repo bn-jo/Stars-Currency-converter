@@ -1,0 +1,202 @@
+:root {
+  --primary-color: #3b38d8;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #d6eed3;
+  font-family: Arial, Helvetica, sans-serif;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 50vh;
+  margin: 0;
+  padding: 20px;
+}
+
+h1 {
+  color: var(--primary-color);
+}
+
+p {
+  text-align: center;
+}
+
+.btn {
+  color: #fff;
+  background: var(--primary-color);
+  cursor: pointer;
+  border-radius: 5px;
+  font-size: 12px;
+  padding: 5px 12px;
+}
+
+.money-img {
+  width: 150px;
+}
+
+.currency {
+  padding: 40px 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.currency select {
+  padding: 10px 20px 10px 10px;
+  -moz-appearance: none;
+  -webkit-appearance: none;
+  appearance: none;
+  border: 1px solid #dedede;
+  font-size: 16px;
+  /*  You may not need these following lines. The arrow did not show for me on MacOS/Chrome so I added it. Just remove it if you would like  */
+  background: transparent;
+  background-image: url('data:image/svg+xml;charset=US-ASCII,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22292.4%22%20height%3D%22292.4%22%3E%3Cpath%20fill%3D%22%20000002%22%20d%3D%22M287%2069.4a17.6%2017.6%200%200%200-13-5.4H18.4c-5%200-9.3%201.8-12.9%205.4A17.6%2017.6%200%200%200%200%2082.2c0%205%201.8%209.3%205.4%2012.9l128%20127.9c3.6%203.6%207.8%205.4%2012.8%205.4s9.2-1.8%2012.8-5.4L287%2095c3.5-3.5%205.4-7.8%205.4-12.8%200-5-1.9-9.2-5.5-12.8z%22%2F%3E%3C%2Fsvg%3E');
+  background-position: right 10px top 50%, 0, 0;
+  background-size: 12px auto, 100%;
+  background-repeat: no-repeat;
+}
+
+.currency input {
+  border: 0;
+  background: transparent;
+  font-size: 30px;
+  text-align: right;
+}
+
+.swap-rate-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.rate {
+  color: var(--primary-color);
+  font-size: 14px;
+  padding: 0 10px;
+}
+
+select:focus,
+input:focus,
+button:focus {
+  outline: 0;
+}
+
+@media (max-width: 600px) {
+  .currency input {
+    width: 200px;
+  }
+}
+
+
+
+
+
+* {
+  margin: 0;
+  padding: 0;
+  font-family: 'Roboto Slab';
+}
+canvas {
+  -webkit-transform: translate3d(0, 0, 0);
+  -moz-transform: translate3d(0, 0, 0);
+  transform: translate3d(0, 0, 0);
+  z-index: -2;
+}
+body {
+  overflow-x: hidden;
+}
+#canvas {
+    height: 100%;
+}
+#hero {
+  width: 100%;
+  height: 150vh;
+}
+#hero .content {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: flex;
+  width: 100%;
+  height: 100%;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+#hero .content h1 {
+  text-align: center;
+  font-size: clamp(2rem, 5vw, 4rem);
+  color: white;
+  width: clamp(300px, 60vw, 80%);
+  margin-bottom: 2rem;
+  opacity: 0;
+  animation: goUp 1s cubic-bezier(0, 0.55, 0.45, 1) forwards;
+}
+.btn {
+  padding: 1rem;
+  border-radius: 0.3rem;
+  text-decoration: none;
+}
+.btn-light {
+  background-color: transparent;
+  border: 1px solid #ccc;
+  color: white;
+  font-size: 1rem;
+}
+.btn-light:hover {
+  background-color: white;
+  color: #2a4f5f;
+}
+#hero .buttons {
+  animation: goUp 1s cubic-bezier(0, 0.55, 0.45, 1) 0.5s forwards;
+  opacity: 0;
+}
+.text-highlight {
+  position: relative;
+  z-index: 5;
+  color: #937dff;
+  text-shadow: 1px 2px 10px #555;
+}
+.text-highlight:after {
+  position: absolute;
+  content: '';
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 30px;
+  background: #fc466b; /* fallback for old browsers */
+  background: -webkit-linear-gradient(to right, #00d2ff, hsla(181, 100%, 44%, 1)); /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(
+    to right,
+    #00d2ff,
+    hsla(181, 100%, 44%, 1)
+  ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  opacity: 0.5;
+  z-index: -1;
+  animation: fullWidth 1s cubic-bezier(0, 0.55, 0.45, 1) 0.5s forwards;
+}
+@keyframes fullWidth {
+  0% {
+    width: 0;
+  }
+  100% {
+    width: 100%;
+  }
+}
+@keyframes goUp {
+  0% {
+    opacity: 0;
+    transform: translateY(50px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
